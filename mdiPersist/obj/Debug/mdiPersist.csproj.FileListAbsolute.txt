@@ -1,0 +1,13 @@
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.csprojAssemblyReference.cache
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.Properties.Resources.resources
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.csproj.GenerateResource.cache
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.csproj.CoreCompileInputs.cache
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.FrmEx3.resources
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.MdiMain.resources
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.FrmEx1.resources
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.FrmEx2.resources
+C:\Tutoriais\Persistencia\mdiPersist\bin\Debug\mdiPersist.exe.config
+C:\Tutoriais\Persistencia\mdiPersist\bin\Debug\mdiPersist.exe
+C:\Tutoriais\Persistencia\mdiPersist\bin\Debug\mdiPersist.pdb
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.exe
+C:\Tutoriais\Persistencia\mdiPersist\obj\Debug\mdiPersist.pdb

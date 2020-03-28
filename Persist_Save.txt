@@ -1,0 +1,53 @@
+USE [DataBase]
+GO
+/****** Object:  StoredProcedure [dbo].[spPersistValue_Save]    Script Date: 3/28/2020 1:16:18 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[spPersistValue_Save]
+	@userName      varchar( 24) = null,
+	@formName      varchar( 24) = null,
+	@componentName varchar( 24) = null,
+	@propertyName  varchar( 24) = null, 
+	@savedValue    varchar( 50) = null
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+	Declare @rowId int = 0
+
+	-- Checks for this pre existent records
+	Select @rowId = rowId from PersistValues 
+	 where     userName      = @userName
+           and formName      = @formName 
+           and componentName = @componentName
+		   and propertyName  = @propertyName
+
+	-- Checks for duplicate keys
+	if ( @rowId = 0 ) -- NAO EXISTE registro deste usuario para este componente
+		begin try
+			INSERT into PersistValues 
+				(  userName,  formName,  componentName,  propertyName,  savedValue)
+				values
+				( @userName, @formName, @componentName, @propertyName, @savedValue)
+			return 1
+		end try
+		begin catch
+			return -1
+		end catch
+	else             -- EXISTE registro deste usuario para este componente
+		begin try
+			UPDATE PersistValues 
+			   set savedValue = @savedValue
+			 where rowId = @rowId
+
+			 return 2
+		end try
+		begin catch
+			return -2
+		end catch
+END

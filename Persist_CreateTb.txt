@@ -1,0 +1,38 @@
+USE [DataBase]
+GO
+
+/****** Object:  Table [dbo].[PersistValues]    Script Date: 3/28/2020 1:21:28 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[PersistValues](
+	[userName] [varchar](12) NOT NULL,
+	[formName] [varchar](24) NOT NULL,
+	[componentName] [varchar](24) NOT NULL,
+	[propertyName] [varchar](24) NOT NULL,
+	[savedValue] [varchar](50) NULL,
+	[rowId] [int] IDENTITY(1,1) NOT NULL,
+ CONSTRAINT [PK_SavedValues] PRIMARY KEY CLUSTERED 
+(
+	[rowId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[PersistValues] ADD  DEFAULT ('') FOR [userName]
+GO
+
+ALTER TABLE [dbo].[PersistValues] ADD  DEFAULT ('') FOR [formName]
+GO
+
+ALTER TABLE [dbo].[PersistValues] ADD  DEFAULT ('') FOR [componentName]
+GO
+
+ALTER TABLE [dbo].[PersistValues] ADD  DEFAULT ('') FOR [propertyName]
+GO
+
+ALTER TABLE [dbo].[PersistValues] ADD  DEFAULT ('') FOR [savedValue]
+GO

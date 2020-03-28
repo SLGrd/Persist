@@ -1,0 +1,29 @@
+USE [DataBase]
+GO
+/****** Object:  StoredProcedure [dbo].[spPersistValue_Get]    Script Date: 3/28/2020 1:19:42 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+ALTER PROCEDURE [dbo].[spPersistValue_Get]
+	
+	@userName      varchar( 24) = null,
+	@formName      varchar( 24) = null,
+	@componentName varchar( 24) = null,
+	@propertyName  varchar( 24) = null, 
+	@savedValue    varchar( 50) output
+
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT savedValue FROM PersistValues
+	 where     userName      = @userName
+           and formName      = @formName 
+           and componentName = @componentName
+		   and propertyName  = @propertyName
+END
